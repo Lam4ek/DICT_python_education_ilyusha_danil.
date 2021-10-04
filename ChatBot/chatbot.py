@@ -12,3 +12,11 @@ b = int(input())
 c = int(input())
 your_age = (a*70+b*21+c*15) % 105
 print("Your age is" + " " + str(your_age) + ";" + " " + "that's a good time to start programming!")
+print("Now I will prove to you that I can count to any number you want.")
+i = -1
+d = "!"
+your_number = int(input())
+while i < your_number:
+    i = i+1
+    print (str(i) + "!")
+print("Completed, have a nice day!")
