@@ -2,8 +2,9 @@ import random
 print("HANGMAN")
 wordlist = ['python', 'java', 'javascript', 'php']
 a = random.choice(wordlist)
+
 guesses = ''
-attempts = 8
+attempts = 2
 splitted_word = list(a)
 
 while attempts > 0:
@@ -19,19 +20,26 @@ while attempts > 0:
             break
 
     guess = input('Input a letter: ')
-
-    if guess not in a:
-        if guess in guesses:
-            print('No improvements')
+    if len(guess)==1:
+        if guess.islower():
+            if guess not in a:
+                if guess in guesses:
+                    print("You've already guessed this letter.")
+                else:
+                    guesses += guess
+                    guesses + a
+                    attempts = attempts - 1
+                    print("That letter doesn't appear in the word" )
+            else:
+                if guess in guesses:
+                    print("You've already guessed this letter.")
+                else:
+                    guesses += guess
         else:
-            guesses += guess
-            attempts = attempts - 1
-            print("That letter doesn't appear in the word" )
+            print('Please enter a lowercase English letter.')
     else:
-        if guess in guesses:
-            print('No improvements')
-        else:
-            guesses += guess
+        print("not singer letter")
+            
 
     
       
