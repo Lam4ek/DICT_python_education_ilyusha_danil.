@@ -38,7 +38,8 @@ while i == True:
             for i in range(1, n+1):
                 listText = input('Row #' + str(i) + ": ")
                 text = text + '\n' + str(i) + ". " + listText
-        print(text)
+        print(text + '\n')
+        i = True
     if a == 'unordered-list':
         m = int(input('Number of rows: '))
         if m < 1:
@@ -46,10 +47,12 @@ while i == True:
         else:
             for i in range(1, m+1):
                 listText = input('Row #' + str(i) + ": ")
-                text = text + '\n' + "- " + listText
-        print(text)
-
+                text = text + '\n' + "- " + listText 
+        print(text + '\n')
+        continue
     if a == ('!help'):
         print('Available formatters: plain bold italic header link inline-code ordered-list unordered-list new-line' '\n' 'Special commands: !help !done')
     if a == ('!done'):
         i = False
+        my_file = open("results.txt", "w+")
+        my_file.write(text)
