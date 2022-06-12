@@ -30,6 +30,24 @@ while i == True:
     if a == 'new-line':
         text = text + "\n"
         print(text)
+    if a == 'ordered-list':
+        n = int(input('Number of rows: '))
+        if n < 1:
+            print('The number of rows should be greater than zero.')
+        else:
+            for i in range(1, n+1):
+                listText = input('Row #' + str(i) + ": ")
+                text = text + '\n' + str(i) + ". " + listText
+        print(text)
+    if a == 'unordered-list':
+        m = int(input('Number of rows: '))
+        if m < 1:
+            print('The number of rows should be greater than zero.')
+        else:
+            for i in range(1, m+1):
+                listText = input('Row #' + str(i) + ": ")
+                text = text + '\n' + "- " + listText
+        print(text)
 
     if a == ('!help'):
         print('Available formatters: plain bold italic header link inline-code ordered-list unordered-list new-line' '\n' 'Special commands: !help !done')
